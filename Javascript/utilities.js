@@ -17,10 +17,12 @@ class Utilities {
             name: 'Browser Information',
             blocks: [
                 {
+					opcode: 'getStoreCount',
                     blockType: Scratch.BlockType.REPORTER,
                     text: 'Get Browser Name',
                 },
 				{
+					opcode: 'getStoreCount',
 					blockType: Scratch.BlockType.REPORTER,
 					text: 'StoreCount',
 				}
