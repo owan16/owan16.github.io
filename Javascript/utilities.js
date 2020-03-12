@@ -17,11 +17,11 @@ class Utilities {
             name: 'Browser Information',
             blocks: [
                 {
-                    blockType: BlockType.REPORTER,
+                    blockType: Scratch.BlockType.REPORTER,
                     text: 'Get Browser Name',
                 },
 				{
-					blockType: BlockType.REPORTER,
+					blockType: Scratch.BlockType.REPORTER,
 					text: 'StoreCount',
 				}
             ],
