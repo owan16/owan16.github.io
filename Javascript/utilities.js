@@ -92,7 +92,7 @@ class Utilities {
 	
 	test() {
 		const Http = new XMLHttpRequest();
-		const url = '"https://cors-anywhere.herokuapp.com/http://localhost:8601/services/thing/status/system';
+		const url = '"https://cors-anywhere.herokuapp.com/http://localhost:8080/services/pedometer/data/ax';
 		Http.open("GET",url);
 		Http.send();
 		
@@ -123,7 +123,7 @@ class Utilities {
 //                 msg = "ERROR";
 //             },
 //         });
-	fetch('https://cors-anywhere.herokuapp.com/http://localhost:8080/services/thing/status/system', {method: 'get'})
+	fetch('https://cors-anywhere.herokuapp.com/http://localhost:8080/services/pedometer/data/ax', {method: 'get'})
 	.then(function(response) {
 	    //處理 response
 		console.log("test")
