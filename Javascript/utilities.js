@@ -96,6 +96,26 @@ class Utilities {
 		}
 	}
 	
+	fuck() {
+		var request = new XMLHttpRequest()
+
+		request.open('GET', 'https://cors-anywhere.herokuapp.com/http://localhost:8080/services/pedometer/data/step', true)
+		request.onload = function() {
+		  // Begin accessing JSON data here
+		  var data = JSON.parse(this.response)
+
+		  if (request.status >= 200 && request.status < 400) {
+		    data.forEach(movie => {
+		      console.log(movie.title)
+		    })
+		  } else {
+		    console.log('error')
+		  }
+		}
+
+		request.send()
+	}
+	
 	
 }
 Scratch.extensions.register(new Utilities());
