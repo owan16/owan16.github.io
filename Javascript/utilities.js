@@ -75,7 +75,7 @@ class Utilities {
 	    'Access-Control-Allow-Origin': '*',
 	    'Content-Type': 'text/plain'
 	});
-	fetch('http://localhost:8080/services/pedometer/data/step', {
+	fetch('https://cors-anywhere.herokuapp.com/http://localhost:8080/services/pedometer/data/step', {
 	    method: 'GET',
 	    headers: myHeaders,
 	    mode: 'cors'
