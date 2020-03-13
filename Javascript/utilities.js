@@ -88,14 +88,22 @@ class Utilities {
 	
 	postmethod() {
 		
-		const Http = new XMLHttpRequest();
-		const url = 'https://cors-anywhere.herokuapp.com/http://127.0.0.1:8080/services/pedometer/data/ax';
-		Http.open("POST",url);
-		Http.send();
-		
-		Http.onreadystatechange=(e)=>{
-			console.log(Http.responseText)
-		}
+		 
+    //發出 ajax call
+    var data = $.ajax({
+        type: "POST",
+        url:  "http://127.0.0.1:8080/services/pedometer/data/ax",
+    });
+ 
+    //成功得到資料
+    data.success(function( msg ) {
+        $("#result").html(msg);
+    });
+ 
+    //取得資料失敗
+    data.error(function( msg ) {
+        $("#result").html("fail getting data");
+    });
 	}
 	
 	fuck() {
