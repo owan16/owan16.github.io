@@ -22,7 +22,7 @@ class Utilities {
                     text: 'Get Browser Name',
                 },
 		{
-			opcode: 'getforecast',
+			opcode: 'test',
 			blockType: Scratch.BlockType.REPORTER,
 			text: 'getforecast',
 		},
@@ -45,7 +45,7 @@ class Utilities {
 	 * @return {number} - the Store Count.
 	 */
 	getStoreCount() {
-			fetch('http://localhost:8080/services/pedometer/data/step')
+			fetch('https://cors-anywhere.herokuapp.com/http://localhost:8080/services/pedometer/data/step')
 			.then(function(response) {
 			// 處理 response
 			}).catch(function(err) {
@@ -70,35 +70,9 @@ class Utilities {
 // 		});
 	}
 	
-	getforecast (){
-		let myHeaders = new Headers({
-	    'Access-Control-Allow-Origin': '*',
-	    'Content-Type': 'text/plain'
-	});
-	fetch('http://127.0.0.1:8080/services/pedometer/data/step', {
-		    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-		    credentials: 'same-origin', // include, same-origin, *omit
-		    headers: {
-			    'Access-Control-Allow-Origin': '*',
-			    'Content-Type': 'text/plain'
-		    },
-		    method: 'GET', // *GET, POST, PUT, DELETE, etc.
-		    mode: 'cors', // no-cors, cors, *same-origin
-		    redirect: 'follow', // manual, *follow, error
-		    referrer: 'no-referrer', // *client, no-referrer
-		  }).then(function(response) {
-	    //處理 response
-		console.log("test")
-		console.log(response)
-	}).catch(function(err) {
-	    // Error :(
-	})
-
-	}
-	
 	test() {
 		const Http = new XMLHttpRequest();
-		const url = 'http://127.0.0.1:8080/services/pedometer/data/ax';
+		const url = 'https://cors-anywhere.herokuapp.com/http://127.0.0.1:8080/services/pedometer/data/ax';
 		Http.open("GET",url);
 		Http.send();
 		
