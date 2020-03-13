@@ -1,5 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
 /**
  * How long to wait in ms before timing out requests to translate server.
  * @type {int}
@@ -87,23 +85,27 @@ class Utilities {
 	}
 	
 	postmethod() {
-		
+		// find elements
+		var result = $(".result");
+
+		$.ajax({
+		 type: 'GET',
+		    url: 'https://cors-anywhere.herokuapp.com/http://127.0.0.1:8080/services/pedometer/data/ax',
+		    dataType: 'jsonp',
+		    jsonp: 'callback',
+		    success: (data) => {
+			
+			
+            },
+            err: (textStatus, errorThrown) => {
+                console.log(textStatus);
+                console.log(errorThrown);
+                status = 0;
+                msg = "ERROR";
+            },
+		});
 		 
-    //發出 ajax call
-    var data = $.ajax({
-        type: "POST",
-        url:  "http://127.0.0.1:8080/services/pedometer/data/ax",
-    });
- 
-    //成功得到資料
-    data.success(function( msg ) {
-        $("#result").html(msg);
-    });
- 
-    //取得資料失敗
-    data.error(function( msg ) {
-        $("#result").html("fail getting data");
-    });
+  
 	}
 	
 	fuck() {
