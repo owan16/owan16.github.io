@@ -45,7 +45,7 @@ class Utilities {
 	 * @return {number} - the Store Count.
 	 */
 	getStoreCount() {
-			fetch('https://cors-anywhere.herokuapp.com/http://localhost:8080/services/pedometer/data/step')
+			fetch('http://localhost:8080/services/pedometer/data/step')
 			.then(function(response) {
 			// 處理 response
 			}).catch(function(err) {
