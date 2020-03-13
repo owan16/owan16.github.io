@@ -76,11 +76,22 @@ class Utilities {
 	    'Content-Type': 'text/plain'
 	});
 	fetch('http://127.0.0.1:8080/services/pedometer/data/step', {
-	    method: 'GET',
-	    headers: myHeaders,
-	    mode: 'cors'
-	}) .then((res) => {
-	    // TODO 
+		    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+		    credentials: 'same-origin', // include, same-origin, *omit
+		    headers: {
+			    'Access-Control-Allow-Origin': '*',
+			    'Content-Type': 'text/plain'
+		    },
+		    method: 'GET', // *GET, POST, PUT, DELETE, etc.
+		    mode: 'cors', // no-cors, cors, *same-origin
+		    redirect: 'follow', // manual, *follow, error
+		    referrer: 'no-referrer', // *client, no-referrer
+		  }).then(function(response) {
+	    //處理 response
+		console.log("test")
+		console.log(response)
+	}).catch(function(err) {
+	    // Error :(
 	})
 
 	}
