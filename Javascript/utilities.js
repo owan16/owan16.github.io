@@ -22,9 +22,9 @@ class Utilities {
                     text: 'Get Browser Name',
                 },
 		{
-			opcode: 'getStoreCount',
+			opcode: 'getforecast',
 			blockType: Scratch.BlockType.REPORTER,
-			text: 'StoreCount',
+			text: 'getforecast',
 		},
 		{
 			opcode: 'fuck',
@@ -71,23 +71,18 @@ class Utilities {
 	}
 	
 	getforecast (){
-		  const url = new URL("https://cors-anywhere.herokuapp.com/http://localhost:8080/services/thing/status/system");
-/*
-		  return fetch(url).then(res => {
-			if (res.ok) {
-			  res.json().then(json => {
-				console.log("res")
-				console.log(res)
-			  });
-			}
-		  });
-		  */
-		  fetch("https://cors-anywhere.herokuapp.com/http://localhost:8080/services/thing/status/system")
-			.then(function(response) {
-			// 處理 response
-			}).catch(function(err) {
-			// 錯誤處理
-			});
+			  let myHeaders = new Headers({
+	    'Access-Control-Allow-Origin': '*',
+	    'Content-Type': 'text/plain'
+	});
+	fetch('http://localhost:8080/services/pedometer/data/step', {
+	    method: 'GET',
+	    headers: myHeaders,
+	    mode: 'cors'
+	}) .then((res) => {
+	    // TODO 
+	})
+
 	}
 	
 	test() {
