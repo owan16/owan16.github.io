@@ -30,6 +30,11 @@ class Utilities {
 			opcode: 'fuck',
 			blockType: Scratch.BlockType.REPORTER,
 			text: 'test',
+		},
+		{
+			opcode: 'postmethod',
+			blockType: Scratch.BlockType.REPORTER,
+			text: 'postmethod',
 		}
             ],
         }
@@ -74,6 +79,18 @@ class Utilities {
 		const Http = new XMLHttpRequest();
 		const url = 'https://cors-anywhere.herokuapp.com/http://127.0.0.1:8080/services/pedometer/data/ax';
 		Http.open("GET",url);
+		Http.send();
+		
+		Http.onreadystatechange=(e)=>{
+			console.log(Http.responseText)
+		}
+	}
+	
+	postmethod() {
+		
+		const Http = new XMLHttpRequest();
+		const url = 'https://cors-anywhere.herokuapp.com/http://127.0.0.1:8080/services/pedometer/data/ax';
+		Http.open("POST",url);
 		Http.send();
 		
 		Http.onreadystatechange=(e)=>{
