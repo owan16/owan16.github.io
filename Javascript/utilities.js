@@ -104,7 +104,7 @@ class Utilities {
 	fuck() {
 		$.ajax({
             type: 'GET',
-            url: 'http://localhost:8080/services/thing/status/system',
+            url: 'https://cors-anywhere.herokuapp.com/http://localhost:8080/services/thing/status/system',
             dataType: 'jsonp',
             jsonp: 'callback',
             success: (data) => {
