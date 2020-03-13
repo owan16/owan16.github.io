@@ -102,23 +102,46 @@ class Utilities {
 	}
 	
 	fuck() {
-		var request = new XMLHttpRequest()
+		$.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/services/thing/status/system',
+            dataType: 'jsonp',
+            jsonp: 'callback',
+            success: (data) => {
+                var obj = JSON.parse(data);
+                if (obj.status === "READY") {
+                    status = 2;
+                } else {
+                    status = 1;
+                }
+                msg = obj.status;
+            },
+            err: (textStatus, errorThrown) => {
+                console.log(textStatus);
+                console.log(errorThrown);
+                status = 0;
+                msg = "ERROR";
+            },
+        });
+// 		var request = new XMLHttpRequest()
 
-		request.open('GET', 'https://cors-anywhere.herokuapp.com/http://localhost:8080/services/pedometer/data/step', true)
-		request.onload = function() {
-		  // Begin accessing JSON data here
-		  var data = JSON.parse(this.response)
+// 		request.open('GET', 'https://cors-anywhere.herokuapp.com/http://localhost:8080/services/pedometer/data/step', true)
+// 		request.onload = function() {
+// 		  // Begin accessing JSON data here
+// 		 console.log("response")
+// 		console.log(response)
+// 		  var data = JSON.parse(this.response)
 
-		  if (request.status >= 200 && request.status < 400) {
-		    data.forEach(movie => {
-		      console.log(movie.title)
-		    })
-		  } else {
-		    console.log('error')
-		  }
-		}
+// 		  if (request.status >= 200 && request.status < 400) {
+// 		    data.forEach(movie => {
+// 		      console.log(movie.title)
+// 		    })
+// 		  } else {
+// 		    console.log('error')
+// 		  }
+//		}
 
-		request.send()
+//		request.send()
 	}
 	
 	
