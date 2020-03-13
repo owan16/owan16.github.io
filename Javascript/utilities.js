@@ -71,11 +71,11 @@ class Utilities {
 	}
 	
 	getforecast (){
-			  let myHeaders = new Headers({
+		let myHeaders = new Headers({
 	    'Access-Control-Allow-Origin': '*',
 	    'Content-Type': 'text/plain'
 	});
-	fetch('https://cors-anywhere.herokuapp.com/http://localhost:8080/services/pedometer/data/step', {
+	fetch('http://127.0.0.1:8080/services/pedometer/data/step', {
 	    method: 'GET',
 	    headers: myHeaders,
 	    mode: 'cors'
