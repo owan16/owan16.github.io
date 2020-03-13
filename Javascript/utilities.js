@@ -86,6 +86,7 @@ class Utilities {
 	
 	postmethod() {
 		// find elements
+		var $ = jQuery;
 		var result = $(".result");
 
 		$.ajax({
