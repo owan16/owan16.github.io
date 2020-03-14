@@ -110,35 +110,14 @@ class Utilities {
 	}
 	
 	fuck() {
-// 		$.ajax({
-//             type: 'GET',
-//             url: 'https://cors-anywhere.herokuapp.com/http://localhost:8080/services/thing/status/system',
-//             dataType: 'jsonp',
-//             jsonp: 'callback',
-//             success: (data) => {
-//                 var obj = JSON.parse(data);
-//                 if (obj.status === "READY") {
-//                     status = 2;
-//                 } else {
-//                     status = 1;
-//                 }
-//                 msg = obj.status;
-//             },
-//             err: (textStatus, errorThrown) => {
-//                 console.log(textStatus);
-//                 console.log(errorThrown);
-//                 status = 0;
-//                 msg = "ERROR";
-//             },
-//         });
-	fetch('https://cors-anywhere.herokuapp.com/http://127.0.0.1:8080/services/pedometer/data/ax', {method: 'get'})
-	.then(function(response) {
-	    //處理 response
-		console.log("test")
-		console.log(response)
-	}).catch(function(err) {
-	    // Error :(
-	})
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function() {
+		    if (xhr.readyState === 4){
+			document.getElementById('result').innerHTML = xhr.responseText;
+		    }
+		};
+		xhr.open('GET', 'https://cors-anywhere.herokuapp.com/http://127.0.0.1:8080/services/pedometer/data/ax');
+		xhr.send();
 	}
 	
 	
