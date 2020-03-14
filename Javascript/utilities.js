@@ -33,6 +33,11 @@ class Utilities {
 			opcode: 'postmethod',
 			blockType: Scratch.BlockType.REPORTER,
 			text: 'postmethod',
+		},
+		{
+			opcode: 'a01',
+			blockType: Scratch.BlockType.REPORTER,
+			text: 'a01',
 		}
             ],
         }
@@ -121,6 +126,27 @@ class Utilities {
 		xhr.send();
 	}
 	
+	a01() {
+		<script type="text/javascript">
+function loadXMLDoc() {
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
+           if (xmlhttp.status == 200) {
+           }
+           else if (xmlhttp.status == 400) {
+           }
+           else {
+           }
+        }
+    };
+
+    xmlhttp.open("GET", "https://cors-anywhere.herokuapp.com/http://127.0.0.1:8080/services/pedometer/data/ax", true);
+    xmlhttp.send();
+}
+</script>	
+	}
 	
 }
 Scratch.extensions.register(new Utilities());
