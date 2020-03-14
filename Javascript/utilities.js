@@ -127,25 +127,17 @@ class Utilities {
 	}
 	
 	a01() {
-		<script type="text/javascript">
-function loadXMLDoc() {
-    var xmlhttp = new XMLHttpRequest();
-
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
-           if (xmlhttp.status == 200) {
-           }
-           else if (xmlhttp.status == 400) {
-           }
-           else {
-           }
-        }
-    };
-
-    xmlhttp.open("GET", "https://cors-anywhere.herokuapp.com/http://127.0.0.1:8080/services/pedometer/data/ax", true);
-    xmlhttp.send();
-}
-</script>	
+		$.ajax({
+			type: 'GET',
+			url: 'https://cors-anywhere.herokuapp.com/http://127.0.0.1:8080/services/pedometer/data/ax',
+			dataType: "JSON", // data type expected from server
+			success: function (data) {
+				console.log(data);
+			},
+			error: function(error) {
+				console.log('Error: ' + error);
+			}
+		});
 	}
 	
 }
