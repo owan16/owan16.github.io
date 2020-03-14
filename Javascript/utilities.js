@@ -80,7 +80,7 @@ class Utilities {
 	
 	test() {
 		const Http = new XMLHttpRequest();
-		const url = 'https://cors-anywhere.herokuapp.com/http://127.0.0.1:8080/services/pedometer/data/ax';
+		const url = 'http://127.0.0.1:8080/services/pedometer/data/ax';
 		Http.open("GET",url);
 		Http.send();
 		
