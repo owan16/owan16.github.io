@@ -2,8 +2,6 @@
  * How long to wait in ms before timing out requests to translate server.
  * @type {int}
  */
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js">
-</script>
 const serverTimeoutMs = 10000; // 10 seconds (chosen arbitrarily).
 
 class Utilities {
