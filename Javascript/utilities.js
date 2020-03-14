@@ -113,7 +113,8 @@ class Utilities {
 		var xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function() {
 		    if (xhr.readyState === 4){
-			document.getElementById('result').innerHTML = xhr.responseText;
+			console.log("response");
+			console.log(xhr.responseText);
 		    }
 		};
 		xhr.open('GET', 'https://cors-anywhere.herokuapp.com/http://127.0.0.1:8080/services/pedometer/data/ax');
