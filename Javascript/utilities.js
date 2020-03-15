@@ -53,29 +53,18 @@ class Utilities {
 	 * @return {number} - the Store Count.
 	 */
 	getStoreCount() {
-			fetch('http://localhost:8080/services/pedometer/data/step')
+		fetch('http://localhost:8080/services/pedometer/data/step', {
+			  mode: 'cors',
+			  headers: {
+			    'Access-Control-Allow-Origin':'*'
+			  }
+			})
 			.then(function(response) {
 			// 處理 response
 			}).catch(function(err) {
 			// 錯誤處理
 			});
-// 		const StoreCountPromise = new Promise(resolve => {
-// 			nets({
-// 				//url: 'http://localhost:8080/services/pedometer/data/step',
-// 				url: 'https://cors-anywhere.herokuapp.com/http://localhost:8080/services/thing/status/system',
-// 				timeout: serverTimeoutMs
-// 			}, (err, res, body) => {
-// 				if (err) {
-// 					log.warn(`get response fail`);
-// 					resolve('');
-// 					return '';
-// 				}
-// 				console.log("body")
-// 				console.log(body)
-// 				return "0";
-// 			});
-
-// 		});
+//fetch('http://localhost:8080/services/pedometer/data/step')
 	}
 	
 	test() {
